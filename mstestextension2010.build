@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project name="MSTest Extension" default="zipup">
+	<target name="zipup" description="Zips up the whole application for deployment">
+		<echo message="Zipping up entire application" />
+		<zip zipfile="MSTestExtension2010.zip" verbose="true" comment="SpiraTest Extension for MS Test 2010">
+			<fileset basedir="VS 2010/SpiraTestMSTestExtension/bin/Release" prefix=".net2.0">
+				<include name="SpiraTestMSTestExtension.dll" />
+				<include name="SpiraTestMSTestExtension.dll.config" />
+			</fileset>
+			<fileset basedir="VS 2010" prefix=".net2.0">
+				<include name="**/*.cs" />
+				<include name="**/*.csproj" />
+				<include name="SampleMSTest/*.config" />
+				<include name="**/*.map" />
+				<include name="**/*.datasource" />
+				<include name="**/*.wsdl" />
+				<include name="**/*.disco" />
+				<include name="**/*.xsd" />
+				<include name="**/*.sln" />
+				<include name="**/*.vsmdi" />
+			</fileset>
+
+			<fileset basedir="VS 2010-net4.0/SpiraTestMSTestExtension/bin/Release" prefix=".net4.0">
+				<include name="SpiraTestMSTestExtension.dll" />
+				<include name="SpiraTestMSTestExtension.dll.config" />
+			</fileset>
+			<fileset basedir="VS 2010-net4.0" prefix=".net4.0">
+				<include name="**/*.cs" />
+				<include name="**/*.csproj" />
+				<include name="SampleMSTest/*.config" />
+				<include name="**/*.map" />
+				<include name="**/*.datasource" />
+				<include name="**/*.wsdl" />
+				<include name="**/*.disco" />
+				<include name="**/*.xsd" />
+				<include name="**/*.sln" />
+				<include name="**/*.vsmdi" />
+			</fileset>
+		</zip>
+	</target>	
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<project name="MSTest Extension" default="zipup">
+	<target name="zipup" description="Zips up the whole application for deployment">
+		<echo message="Zipping up entire application" />
+		<zip zipfile="MSTestExtension2008.zip" verbose="true" comment="SpiraTest Extension for MS Test 2008">
+			<fileset basedir="VS 2008/SpiraTestMSTestExtension/bin/Release">
+				<include name="SpiraTestMSTestExtension.dll" />
+				<include name="SpiraTestMSTestExtension.dll.config" />
+			</fileset>
+			<fileset basedir="VS 2008">
+				<include name="**/*.cs" />
+				<include name="**/*.csproj" />
+				<include name="SampleMSTest/*.config" />
+				<include name="**/*.map" />
+				<include name="**/*.datasource" />
+				<include name="**/*.wsdl" />
+				<include name="**/*.disco" />
+				<include name="**/*.xsd" />
+				<include name="**/*.sln" />
+				<include name="**/*.vsmdi" />
+			</fileset>
+		</zip>
+	</target>	
+</project>
